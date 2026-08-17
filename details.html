@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - Real States</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#01c0a6',
+                        dark: '#2c2e3e',
+                        darker: '#1b1d29'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- Navbar Minimalista -->
+    <nav class="bg-dark text-white p-6 shadow-md">
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center px-6">
+            <div class="flex items-center gap-2 text-2xl font-bold tracking-wide cursor-pointer">
+                <i class="fa-solid fa-house-chimney text-brand"></i>
+                <span>Real States</span>
+            </div>
+            <a href="#" class="text-sm font-semibold hover:text-brand transition"><i class="fa-solid fa-arrow-left"></i> Back to Properties</a>
+        </div>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <div class="max-w-[1400px] mx-auto px-12 py-10">
+        
+        <!-- Cabecera de la Propiedad -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+            <div>
+                <div class="flex gap-2 mb-2">
+                    <span class="bg-brand text-white text-xs px-3 py-1 rounded font-bold">For Sale</span>
+                    <span class="bg-dark text-white text-xs px-3 py-1 rounded font-bold">Apartment</span>
+                </div>
+                <h1 class="text-3xl font-extrabold text-gray-900 mb-2">Apartment Morden Santa Monica</h1>
+                <p class="text-gray-500"><i class="fa-solid fa-location-dot mr-1"></i> 6511 Santa Monica Blvd Los Angeles, CA 90038</p>
+            </div>
+            <div class="mt-4 md:mt-0 text-right">
+                <div class="text-brand text-4xl font-extrabold">$136,020</div>
+            </div>
+        </div>
+
+        <!-- Imagen Principal -->
+        <div class="w-full h-[500px] rounded-2xl overflow-hidden mb-8 shadow-lg relative">
+            <img src="https://images.unsplash.com/photo-1506501139174-099022df5260?auto=format&fit=crop&q=80&w=2071" alt="Property" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Grid de Contenido -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            
+            <!-- Columna Izquierda (Detalles) -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <!-- Características Clave -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex justify-around text-center divide-x divide-gray-100">
+                    <div class="px-4">
+                        <i class="fa-solid fa-bed text-brand text-2xl mb-2"></i>
+                        <p class="text-gray-800 font-bold text-lg">4</p>
+                        <p class="text-gray-400 text-sm">Bedrooms</p>
+                    </div>
+                    <div class="px-4">
+                        <i class="fa-solid fa-bath text-brand text-2xl mb-2"></i>
+                        <p class="text-gray-800 font-bold text-lg">3</p>
+                        <p class="text-gray-400 text-sm">Bathrooms</p>
+                    </div>
+                    <div class="px-4">
+                        <i class="fa-regular fa-square text-brand text-2xl mb-2"></i>
+                        <p class="text-gray-800 font-bold text-lg">350</p>
+                        <p class="text-gray-400 text-sm">Square Ft</p>
+                    </div>
+                    <div class="px-4">
+                        <i class="fa-solid fa-car text-brand text-2xl mb-2"></i>
+                        <p class="text-gray-800 font-bold text-lg">2</p>
+                        <p class="text-gray-400 text-sm">Garages</p>
+                    </div>
+                </div>
+
+                <!-- Descripción -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Property Description</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Experience luxury living in this stunning modern apartment located in the heart of Santa Monica. This beautifully designed property offers breathtaking ocean views, top-of-the-line appliances, and a spacious open floor plan perfect for entertaining. 
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Enjoy access to premium building amenities including a rooftop pool, state-of-the-art fitness center, and 24/7 concierge service. Steps away from the best dining, shopping, and entertainment the city has to offer.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Columna Derecha (Contacto) -->
+            <div class="lg:col-span-1">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 sticky top-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-6 border-b pb-2 border-brand inline-block">Contact Agent</h3>
+                    
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-1">Your Name</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-brand" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-1">Phone Number</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-brand" placeholder="+1 234 567 890">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-1">Email Address</label>
+                            <input type="email" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-brand" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-1">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-brand" placeholder="I'm interested in this property..."></textarea>
+                        </div>
+                        <button type="button" class="w-full bg-brand text-white font-bold py-3 rounded-lg hover:bg-teal-500 transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
