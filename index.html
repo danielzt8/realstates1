@@ -99,7 +99,9 @@
                         <span>Beds : 4</span>
                         <span>Baths : 3</span>
                     </div>
-                    <a href="details.html" class="block text-center w-full bg-brand text-white py-2.5 rounded-lg text-sm font-bold hover:bg-teal-600 transition duration-300">View Details</a>
+                    <button onclick="openModal()" class="w-full bg-brand text-white py-2.5 rounded-lg text-sm font-bold hover:bg-teal-600 transition duration-300">
+                        View Details
+                    </button>
                 </div>
             </div>
 
@@ -125,7 +127,10 @@
                         <span>Beds : 4</span>
                         <span>Baths : 3</span>
                     </div>
-                    <a href="details.html" class="block text-center w-full bg-brand text-white py-2.5 rounded-lg text-sm font-bold hover:bg-teal-600 transition duration-300">View Details</a>
+                   
+<button onclick="openModal()" class="w-full bg-brand text-white py-2.5 rounded-lg text-sm font-bold hover:bg-teal-600 transition duration-300">
+    View Details
+</button>
                 </div>
             </div>
 
@@ -151,7 +156,9 @@
                         <span>Beds : 4</span>
                         <span>Baths : 3</span>
                     </div>
-                    <a href="details.html" class="block text-center w-full bg-brand text-white py-2.5 rounded-lg text-sm font-bold hover:bg-teal-600 transition duration-300">View Details</a>
+                    <button onclick="openModal()" class="w-full bg-brand text-white py-2.5 rounded-lg text-sm font-bold hover:bg-teal-600 transition duration-300">
+                        View Details
+                    </button>
                 </div>
             </div>
 
@@ -163,5 +170,51 @@
         <h1 class="text-4xl font-extrabold text-[#2a2f35]">Real Estate Real States</h1>
     </div>
 
+
+    <!-- Pop-up Modal -->
+<div id="propertyModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl relative">
+        
+        <!-- Botón de Cerrar -->
+        <button onclick="closeModal()" class="absolute top-4 right-4 bg-black/50 text-white hover:bg-brand w-8 h-8 rounded-full flex items-center justify-center transition z-10">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Imagen del Pop-up -->
+        <div class="h-64 relative">
+            <img src="https://images.unsplash.com/photo-1506501139174-099022df5260?auto=format&fit=crop&q=80&w=800" alt="Detail Image" class="w-full h-full object-cover">
+            <div class="absolute top-4 left-4 bg-brand text-white text-xs px-3 py-1 rounded">For Sale</div>
+        </div>
+
+        <!-- Detalles Ampliados -->
+        <div class="p-8">
+            <span class="text-brand text-xs font-semibold mb-1 block">Apartment</span>
+            <h3 class="font-bold text-gray-800 text-2xl mb-1">Apartment Morden Santa Monica</h3>
+            <p class="text-gray-400 text-sm mb-4"><i class="fa-solid fa-location-dot mr-1"></i> 6511 Santa Monica Blvd Los Angeles, CA 90038</p>
+            
+            <div class="text-brand text-3xl font-bold mb-4">$136,020</div>
+            
+            <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                Este hermoso apartamento ofrece una vista espectacular, diseño de concepto abierto y acabados de primera calidad. Ubicado en el corazón de Santa Monica, cuenta con acceso directo a centros comerciales, parques y la playa. Seguridad 24/7 y áreas sociales exclusivas.
+            </p>
+            
+            <div class="flex flex-wrap gap-6 border-t border-gray-100 pt-4 text-sm text-gray-600 font-medium">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-bed text-gray-400"></i> 4 Bedrooms</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-bath text-gray-400"></i> 3 Bathrooms</span>
+                <span class="flex items-center gap-2"><i class="fa-regular fa-square text-gray-400"></i> 350 SqFt</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById('propertyModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+        document.getElementById('propertyModal').classList.add('hidden');
+    }
+</script>
 </body>
 </html>
