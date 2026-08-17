@@ -171,42 +171,68 @@
     </div>
 
 
-    <!-- Pop-up Modal -->
-<div id="propertyModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl relative">
+<!-- Pop-up Modal Ampliado -->
+<div id="propertyModal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl w-full max-w-5xl shadow-2xl relative my-8 flex flex-col lg:flex-row overflow-hidden">
         
         <!-- Botón de Cerrar -->
-        <button onclick="closeModal()" class="absolute top-4 right-4 bg-black/50 text-white hover:bg-brand w-8 h-8 rounded-full flex items-center justify-center transition z-10">
-            <i class="fa-solid fa-xmark"></i>
+        <button onclick="closeModal()" class="absolute top-4 right-4 bg-black/50 text-white hover:bg-brand w-10 h-10 rounded-full flex items-center justify-center transition z-20">
+            <i class="fa-solid fa-xmark text-lg"></i>
         </button>
 
-        <!-- Imagen del Pop-up -->
-        <div class="h-64 relative">
-            <img src="https://images.unsplash.com/photo-1506501139174-099022df5260?auto=format&fit=crop&q=80&w=800" alt="Detail Image" class="w-full h-full object-cover">
-            <div class="absolute top-4 left-4 bg-brand text-white text-xs px-3 py-1 rounded">For Sale</div>
-        </div>
-
-        <!-- Detalles Ampliados -->
-        <div class="p-8">
-            <span class="text-brand text-xs font-semibold mb-1 block">Apartment</span>
-            <h3 class="font-bold text-gray-800 text-2xl mb-1">Apartment Morden Santa Monica</h3>
-            <p class="text-gray-400 text-sm mb-4"><i class="fa-solid fa-location-dot mr-1"></i> 6511 Santa Monica Blvd Los Angeles, CA 90038</p>
-            
-            <div class="text-brand text-3xl font-bold mb-4">$136,020</div>
-            
-            <p class="text-gray-600 text-sm mb-6 leading-relaxed">
-                Este hermoso apartamento ofrece una vista espectacular, diseño de concepto abierto y acabados de primera calidad. Ubicado en el corazón de Santa Monica, cuenta con acceso directo a centros comerciales, parques y la playa. Seguridad 24/7 y áreas sociales exclusivas.
-            </p>
-            
-            <div class="flex flex-wrap gap-6 border-t border-gray-100 pt-4 text-sm text-gray-600 font-medium">
-                <span class="flex items-center gap-2"><i class="fa-solid fa-bed text-gray-400"></i> 4 Bedrooms</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-bath text-gray-400"></i> 3 Bathrooms</span>
-                <span class="flex items-center gap-2"><i class="fa-regular fa-square text-gray-400"></i> 350 SqFt</span>
+        <!-- Galería de Imágenes (Izquierda) -->
+        <div class="lg:w-1/2 bg-gray-50 p-6 flex flex-col gap-4">
+            <!-- Imagen Principal -->
+            <div class="relative h-80 rounded-xl overflow-hidden shadow-sm">
+                <img src="https://images.unsplash.com/photo-1506501139174-099022df5260?auto=format&fit=crop&q=80&w=800" alt="Main View" class="w-full h-full object-cover">
+                <div class="absolute top-4 left-4 bg-brand text-white text-xs font-bold px-3 py-1 rounded shadow">For Sale</div>
+            </div>
+            <!-- Miniaturas -->
+            <div class="grid grid-cols-3 gap-4">
+                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=400" alt="Room 1" class="w-full h-24 object-cover rounded-lg cursor-pointer hover:opacity-80 transition shadow-sm border border-gray-200">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=400" alt="Room 2" class="w-full h-24 object-cover rounded-lg cursor-pointer hover:opacity-80 transition shadow-sm border border-gray-200">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=400" alt="Room 3" class="w-full h-24 object-cover rounded-lg cursor-pointer hover:opacity-80 transition shadow-sm border border-gray-200">
             </div>
         </div>
+
+        <!-- Información Detallada (Derecha) -->
+        <div class="lg:w-1/2 p-8 flex flex-col justify-between">
+            <div>
+                <span class="text-brand text-xs font-bold mb-2 uppercase tracking-wider block">Apartment</span>
+                <h3 class="font-extrabold text-gray-800 text-3xl mb-2">Apartment Morden Santa Monica</h3>
+                <p class="text-gray-500 text-sm mb-4 flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand"></i> 6511 Santa Monica Blvd Los Angeles, CA 90038</p>
+                
+                <div class="text-brand text-4xl font-extrabold mb-6">$136,020</div>
+                
+                <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    Este espectacular apartamento de concepto abierto cuenta con acabados de lujo, iluminación natural y una vista panorámica inigualable. Perfecto para familias modernas. Incluye electrodomésticos de última generación y acceso a amenidades premium del complejo.
+                </p>
+
+                <!-- Amenidades Grid -->
+                <h4 class="font-bold text-gray-800 mb-3 text-sm">Amenities & Features</h4>
+                <div class="grid grid-cols-2 gap-y-3 gap-x-4 text-sm text-gray-600 font-medium mb-8">
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-bed text-brand w-4"></i> 4 Bedrooms</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-bath text-brand w-4"></i> 3 Bathrooms</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-ruler-combined text-brand w-4"></i> 350 SqFt</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-car text-brand w-4"></i> 2 Garages</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-water-ladder text-brand w-4"></i> Swimming Pool</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-brand w-4"></i> 24/7 Security</span>
+                </div>
+            </div>
+            
+            <!-- Botones de Acción -->
+            <div class="flex gap-4 border-t border-gray-100 pt-6">
+                <button class="flex-1 bg-brand text-white py-3 rounded-lg text-sm font-bold hover:bg-teal-600 transition duration-300 flex items-center justify-center gap-2 shadow-lg shadow-teal-500/30">
+                    <i class="fa-solid fa-phone"></i> Contact Agent
+                </button>
+                <button class="bg-gray-100 text-gray-700 py-3 px-6 rounded-lg text-sm font-bold hover:bg-gray-200 transition duration-300 flex items-center justify-center">
+                    <i class="fa-regular fa-heart text-lg"></i>
+                </button>
+            </div>
+        </div>
+
     </div>
 </div>
-
 <script>
     function openModal() {
         document.getElementById('propertyModal').classList.remove('hidden');
