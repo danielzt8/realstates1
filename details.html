@@ -22,113 +22,166 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    <!-- Navbar Minimalista -->
-    <nav class="bg-dark text-white p-6 shadow-md">
-        <div class="max-w-[1400px] mx-auto flex justify-between items-center px-6">
-            <div class="flex items-center gap-2 text-2xl font-bold tracking-wide cursor-pointer">
+    <!-- Navegación -->
+    <header class="bg-darker">
+        <nav class="flex justify-between items-center p-4 md:p-6 text-white max-w-[1400px] mx-auto">
+            <a href="index.html" class="flex items-center gap-2 text-xl md:text-2xl font-bold tracking-wide hover:text-brand transition">
                 <i class="fa-solid fa-house-chimney text-brand"></i>
                 <span>Real States</span>
-            </div>
-            <a href="index.html" class="text-sm font-semibold hover:text-brand transition"><i class="fa-solid fa-arrow-left"></i> Back to Properties</a>
-        </div>
-    </nav>
+            </a>
+            <!-- Botón de menú móvil -->
+            <button class="md:hidden text-white text-2xl"><i class="fa-solid fa-bars"></i></button>
+            <ul class="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-wide">
+                <li><a href="index.html" class="hover:text-brand">Home</a></li>
+                <li><a href="properties.html" class="hover:text-brand">Properties</a></li>
+                <li><a href="blog.html" class="hover:text-brand">Blog</a></li>
+                <li><a href="login.html" class="hover:text-brand">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Contenedor Principal -->
-    <div class="max-w-[1400px] mx-auto px-12 py-10">
+    <main class="max-w-[1400px] mx-auto px-4 md:px-12 py-6 md:py-8">
         
-        <!-- Cabecera de la Propiedad -->
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+        <!-- Encabezado -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 md:mb-8 gap-4">
             <div>
-                <div class="flex gap-2 mb-2">
-                    <span class="bg-brand text-white text-xs px-3 py-1 rounded font-bold">For Sale</span>
-                    <span class="bg-dark text-white text-xs px-3 py-1 rounded font-bold">Apartment</span>
-                </div>
-                <h1 class="text-3xl font-extrabold text-gray-900 mb-2">Apartment Morden Santa Monica</h1>
-                <p class="text-gray-500"><i class="fa-solid fa-location-dot mr-1"></i> 6511 Santa Monica Blvd Los Angeles, CA 90038</p>
+                <span class="bg-brand/10 text-brand text-xs font-bold px-3 py-1 rounded uppercase tracking-wider mb-2 md:mb-3 inline-block">For Sale</span>
+                <h1 class="text-2xl md:text-5xl font-extrabold text-gray-900 mb-2">Apartment Morden Santa Monica</h1>
+                <p class="text-gray-500 text-sm md:text-base flex items-start md:items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-brand mt-1 md:mt-0"></i> 
+                    6511 Santa Monica Blvd Los Angeles, CA 90038
+                </p>
             </div>
-            <div class="mt-4 md:mt-0 text-right">
-                <div class="text-brand text-4xl font-extrabold">$136,020</div>
+            <div class="text-left md:text-right mt-2 md:mt-0">
+                <div class="text-brand text-3xl md:text-4xl font-extrabold">$136,020</div>
+                <p class="text-gray-500 text-sm mt-1">$388 / SqFt</p>
             </div>
         </div>
 
-        <!-- Imagen Principal -->
-        <div class="w-full h-[500px] rounded-2xl overflow-hidden mb-8 shadow-lg relative">
-            <img src="https://images.unsplash.com/photo-1506501139174-099022df5260?auto=format&fit=crop&q=80&w=2071" alt="Property" class="w-full h-full object-cover">
-        </div>
-
-        <!-- Grid de Contenido -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <!-- Galería de Imágenes (Adaptativa con miniaturas en móvil) -->
+        <div class="grid grid-cols-4 gap-2 md:gap-4 mb-8 md:mb-12">
             
-            <!-- Columna Izquierda (Detalles) -->
-            <div class="lg:col-span-2 space-y-8">
-                
-                <!-- Características Clave -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex justify-around text-center divide-x divide-gray-100">
-                    <div class="px-4">
-                        <i class="fa-solid fa-bed text-brand text-2xl mb-2"></i>
-                        <p class="text-gray-800 font-bold text-lg">4</p>
-                        <p class="text-gray-400 text-sm">Bedrooms</p>
+            <!-- Imagen Principal -->
+            <div class="col-span-4 md:col-span-2 md:row-span-2 h-56 md:h-[500px] rounded-xl md:rounded-2xl overflow-hidden relative group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1506501139174-099022df5260?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover transition duration-500 md:group-hover:scale-105" alt="Main">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition hidden md:block"></div>
+            </div>
+            
+            <!-- Miniatura 1 -->
+            <div class="col-span-1 md:col-span-1 h-20 md:h-[auto] rounded-lg md:rounded-2xl overflow-hidden relative group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition duration-500 md:hover:scale-105" alt="Room 1">
+            </div>
+            
+            <!-- Miniatura 2 -->
+            <div class="col-span-1 md:col-span-1 h-20 md:h-[auto] rounded-lg md:rounded-2xl overflow-hidden relative group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition duration-500 md:hover:scale-105" alt="Room 2">
+            </div>
+            
+            <!-- Miniatura 3 -->
+            <div class="col-span-1 md:col-span-1 h-20 md:h-[auto] rounded-lg md:rounded-2xl overflow-hidden relative group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition duration-500 md:hover:scale-105" alt="Room 3">
+            </div>
+            
+            <!-- Miniatura 4 -->
+            <div class="col-span-1 md:col-span-1 h-20 md:h-[auto] rounded-lg md:rounded-2xl overflow-hidden relative group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition duration-500 md:hover:scale-105" alt="Room 4">
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center hover:bg-black/60 transition">
+                    <span class="text-white font-bold text-xs md:text-lg text-center">
+                        <span class="md:hidden">+8</span>
+                        <span class="hidden md:inline"><i class="fa-regular fa-images"></i> View All</span>
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 relative">
+            
+            <!-- Detalles -->
+            <div class="lg:w-2/3">
+                <!-- Resumen Rápido -->
+                <div class="grid grid-cols-2 md:flex md:flex-wrap gap-4 md:gap-8 py-6 border-y border-gray-200 mb-8">
+                    <div class="flex flex-col">
+                        <span class="text-gray-400 text-xs md:text-sm mb-1">Bedrooms</span>
+                        <span class="font-bold text-lg md:text-xl flex items-center gap-2"><i class="fa-solid fa-bed text-brand"></i> 4</span>
                     </div>
-                    <div class="px-4">
-                        <i class="fa-solid fa-bath text-brand text-2xl mb-2"></i>
-                        <p class="text-gray-800 font-bold text-lg">3</p>
-                        <p class="text-gray-400 text-sm">Bathrooms</p>
+                    <div class="flex flex-col">
+                        <span class="text-gray-400 text-xs md:text-sm mb-1">Bathrooms</span>
+                        <span class="font-bold text-lg md:text-xl flex items-center gap-2"><i class="fa-solid fa-bath text-brand"></i> 3</span>
                     </div>
-                    <div class="px-4">
-                        <i class="fa-regular fa-square text-brand text-2xl mb-2"></i>
-                        <p class="text-gray-800 font-bold text-lg">350</p>
-                        <p class="text-gray-400 text-sm">Square Ft</p>
+                    <div class="flex flex-col">
+                        <span class="text-gray-400 text-xs md:text-sm mb-1">Square Feet</span>
+                        <span class="font-bold text-lg md:text-xl flex items-center gap-2"><i class="fa-solid fa-ruler-combined text-brand"></i> 350</span>
                     </div>
-                    <div class="px-4">
-                        <i class="fa-solid fa-car text-brand text-2xl mb-2"></i>
-                        <p class="text-gray-800 font-bold text-lg">2</p>
-                        <p class="text-gray-400 text-sm">Garages</p>
+                    <div class="flex flex-col">
+                        <span class="text-gray-400 text-xs md:text-sm mb-1">Year Built</span>
+                        <span class="font-bold text-lg md:text-xl flex items-center gap-2"><i class="fa-regular fa-calendar text-brand"></i> 2018</span>
                     </div>
                 </div>
 
-                <!-- Descripción -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Property Description</h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        Experience luxury living in this stunning modern apartment located in the heart of Santa Monica. This beautifully designed property offers breathtaking ocean views, top-of-the-line appliances, and a spacious open floor plan perfect for entertaining. 
-                    </p>
-                    <p class="text-gray-600 leading-relaxed">
-                        Enjoy access to premium building amenities including a rooftop pool, state-of-the-art fitness center, and 24/7 concierge service. Steps away from the best dining, shopping, and entertainment the city has to offer.
-                    </p>
+                <h3 class="text-xl md:text-2xl font-bold mb-4">Property Description</h3>
+                <div class="text-gray-600 text-sm md:text-base leading-relaxed space-y-4 mb-8 md:mb-10">
+                    <p>Este espectacular apartamento de concepto abierto cuenta con acabados de lujo, iluminación natural y una vista panorámica inigualable. Ubicado en el prestigioso distrito de Santa Mónica, ofrece el equilibrio perfecto entre la vida urbana vibrante y la tranquilidad del hogar.</p>
+                    <p>La cocina está equipada con electrodomésticos de acero inoxidable de última generación, encimeras de granito y gabinetes personalizados. El dormitorio principal incluye un vestidor espacioso y un baño en suite con bañera profunda y ducha separada. Disfrute de las tardes en el balcón privado con vistas a la ciudad.</p>
+                </div>
+
+                <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6">Amenities & Features</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-6 text-gray-700 mb-10 text-sm md:text-base">
+                    <span class="flex items-center gap-3"><i class="fa-solid fa-check text-brand bg-brand/10 p-1.5 rounded-full text-xs"></i> Air Conditioning</span>
+                    <span class="flex items-center gap-3"><i class="fa-solid fa-check text-brand bg-brand/10 p-1.5 rounded-full text-xs"></i> Swimming Pool</span>
+                    <span class="flex items-center gap-3"><i class="fa-solid fa-check text-brand bg-brand/10 p-1.5 rounded-full text-xs"></i> Central Heating</span>
+                    <span class="flex items-center gap-3"><i class="fa-solid fa-check text-brand bg-brand/10 p-1.5 rounded-full text-xs"></i> Laundry Room</span>
+                    <span class="flex items-center gap-3"><i class="fa-solid fa-check text-brand bg-brand/10 p-1.5 rounded-full text-xs"></i> Gym</span>
+                    <span class="flex items-center gap-3"><i class="fa-solid fa-check text-brand bg-brand/10 p-1.5 rounded-full text-xs"></i> 24/7 Security</span>
+                    <span class="flex items-center gap-3"><i class="fa-solid fa-check text-brand bg-brand/10 p-1.5 rounded-full text-xs"></i> Window Coverings</span>
+                    <span class="flex items-center gap-3"><i class="fa-solid fa-check text-brand bg-brand/10 p-1.5 rounded-full text-xs"></i> Free WiFi</span>
+                    <span class="flex items-center gap-3"><i class="fa-solid fa-check text-brand bg-brand/10 p-1.5 rounded-full text-xs"></i> 2 Car Garage</span>
                 </div>
             </div>
 
-            <!-- Columna Derecha (Contacto) -->
-            <div class="lg:col-span-1">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 sticky top-6">
-                    <h3 class="text-lg font-bold text-gray-900 mb-6 border-b pb-2 border-brand inline-block">Contact Agent</h3>
+            <!-- Formulario de Contacto -->
+            <div class="lg:w-1/3">
+                <div class="bg-white p-5 md:p-6 rounded-2xl shadow-xl border border-gray-100 lg:sticky lg:top-8">
+                    <h4 class="text-lg md:text-xl font-bold mb-4 md:mb-6">Contact Agent</h4>
                     
-                    <form class="space-y-4">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150" alt="Agent" class="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover border-2 border-brand">
                         <div>
-                            <label class="block text-sm text-gray-600 mb-1">Your Name</label>
-                            <input type="text" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-brand" placeholder="John Doe">
+                            <h5 class="font-bold text-gray-900 text-sm md:text-base">Michael Roberts</h5>
+                            <p class="text-xs md:text-sm text-brand font-semibold">Real Estate Broker</p>
                         </div>
-                        <div>
-                            <label class="block text-sm text-gray-600 mb-1">Phone Number</label>
-                            <input type="text" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-brand" placeholder="+1 234 567 890">
-                        </div>
-                        <div>
-                            <label class="block text-sm text-gray-600 mb-1">Email Address</label>
-                            <input type="email" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-brand" placeholder="john@example.com">
-                        </div>
-                        <div>
-                            <label class="block text-sm text-gray-600 mb-1">Message</label>
-                            <textarea rows="4" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-brand" placeholder="I'm interested in this property..."></textarea>
-                        </div>
-                        <button type="button" class="w-full bg-brand text-white font-bold py-3 rounded-lg hover:bg-teal-500 transition duration-300">
+                    </div>
+
+                    <form class="flex flex-col gap-3 md:gap-4 text-sm md:text-base">
+                        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand">
+                        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand">
+                        <input type="tel" placeholder="Your Phone" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand">
+                        <textarea rows="4" placeholder="I'm interested in this property..." class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand resize-none"></textarea>
+                        
+                        <button type="button" class="w-full bg-brand text-white font-bold py-3 md:py-3.5 rounded-lg hover:bg-teal-600 transition shadow-lg shadow-teal-500/30 mt-2">
                             Send Message
                         </button>
                     </form>
+                    
+                    <div class="flex mt-4">
+                        <button class="w-full border border-gray-300 text-gray-700 py-2.5 rounded-lg font-semibold hover:bg-gray-50 transition flex items-center justify-center gap-2 text-sm md:text-base">
+                            <i class="fa-brands fa-whatsapp text-green-500"></i> WhatsApp
+                        </button>
+                    </div>
                 </div>
             </div>
 
         </div>
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-darker text-white py-6 md:py-8 mt-8 md:mt-12 text-center">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <h2 class="text-xl md:text-2xl font-bold mb-2">Real Estate Real States</h2>
+            <p class="text-gray-400 text-xs md:text-sm">© 2026 All Rights Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
